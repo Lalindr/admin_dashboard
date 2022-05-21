@@ -1,6 +1,8 @@
 :root{
     --gray-color: #e3e9f0;
     --blue-color: #1893d4;
+    --text-color: #7b7a7a;
+    --white-color: #fffefe;
 }
 @font-face{
     
@@ -47,9 +49,9 @@ li{
 .navbar{
     grid-column: 2;
     grid-row: 1;
-    background-color: #fffefe;
+    background-color: var(--white-color);
     display: grid;
-    grid-template-rows: .3fr .8fr;
+    grid-template-rows: .3fr .5fr;
     padding: 0 10px 5px 10px;
 }
 input[type="search"]{
@@ -61,7 +63,7 @@ input[type="search"]{
 input[type="search"]:focus{
     outline: none;
 }
-.upper-row-img{
+.upper-row-img, .user img{
     height: 50px;
     width: auto;
     border-radius: 35px;
@@ -135,6 +137,8 @@ input[type="search"]:focus{
     grid-column: 2;
     background-color: var(--gray-color);
     font-family: quicksand-bold;
+    display: grid;
+    grid-template-columns: .85fr .2fr;
 }
 .cardfield-left{
     display: grid;
@@ -149,7 +153,7 @@ input[type="search"]:focus{
     justify-self: start;
 }
 .project-card{
-    background-color: #fffefe;
+    background-color: var(--white-color);
     height: 200px;
     width: 350px;
     border-radius: 10px;
@@ -162,7 +166,68 @@ input[type="search"]:focus{
     align-self: end;
     margin: 0;
 }
+.project-card p, .announcements p{
+    color: var(--text-color);
+}
 .project-card .svgs{
     align-self: end;
     justify-self: end;
+}
+.svgs{
+   display: flex; 
+   gap: 15px;
+}
+svg {
+    display: block;
+}
+.cardfield-right{
+    grid-row: 1;
+    grid-column: 2;
+    padding-right: 10px;
+}
+.announcements{
+    background-color: var(--white-color);
+    padding: 5px;
+    border-radius: 10px;
+    width: 250px;
+    padding: 20px;
+}
+.announcements p:nth-of-type(-n+2){
+    border-bottom: 2px solid #f3f2f3;
+    padding-bottom: 20px;
+}
+.announcements p{
+    margin-top: 0;
+}
+.announcements h3{
+    margin-bottom: 3px;
+}
+.trending{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    background-color: var(--white-color);
+    border-radius: 10px;
+    padding: 10px;
+}
+.user{
+    display: grid;
+    grid-template-columns: .1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 5px;
+}
+.user img{
+    grid-column: 1;
+    grid-row: 1 / 3;
+    justify-self: end;
+}
+.user p:nth-of-type(even){
+    color: #626362;
+    font-size: .8rem;
+}
+.user p{
+    margin: 0;
+}
+.user p:nth-of-type(odd){
+    align-self: end;
 }
